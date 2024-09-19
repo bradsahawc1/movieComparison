@@ -9,7 +9,7 @@ const fetchData = async (searchTerm) => {
     const response = await axios.get('http://www.omdbapi.com/', {
         params: {
             apiKey: '513156eb',
-            i: searchTerm
+            s: searchTerm
         }
     });
 
@@ -17,17 +17,6 @@ const fetchData = async (searchTerm) => {
 };
 
 const input = document.querySelector('input');
-
-const debounce = (func, delay = 1000) => {
-    return (...args) => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            func.apply(null, args);
-        }, delay)
-    };
-};
 
 const onInput = event => {
     fetchData(event.target.value);
