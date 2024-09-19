@@ -29,7 +29,7 @@ const debounce = (func, delay = 1000) => {
     };
 };
 
-const onInput = debounce(event => {
+const onInput = event => {
     fetchData(event.target.value);
-});
+};
 input.addEventListener('input', debounce(onInput, 500));
